@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "MZ_Login_NC.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,16 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    
+    self.window.backgroundColor = [UIColor yellowColor];
+    
+    MZ_Login_NC *navC = [[MZ_Login_NC alloc]init];
+    
+    self.window.rootViewController = navC;
+    
+    [self.window makeKeyAndVisible];
     return YES;
 }
 

@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  MZ_Login_NC.h
 //  MZ_ContentList_test
 //
 //  Created by Mia.Zhang on 20/05/15.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface MZ_Login_NC : UINavigationController
 
 @end
-
