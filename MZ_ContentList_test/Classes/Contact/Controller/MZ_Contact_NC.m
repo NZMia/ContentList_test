@@ -9,7 +9,7 @@
 #import "MZ_Contact_NC.h"
 #import "AFNetworking.h"
 
-@interface MZ_Contact_NC ()
+@interface MZ_Contact_NC ()<UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) NSMutableArray *status;
 @end
@@ -19,6 +19,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
     
     [self setNav];
     [self loadStatus];
@@ -34,9 +37,16 @@
 - (void)loadStatus
 {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-
-    NSMutableDictionary *parameter = [NSMutableDictionary dictionary];
-    
+    NSString *url = @"http://jsonplaceholder.typicode.com/users";
+    [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        NSLog(@"successful = %@",responseObject);
+//        self.status = responseObject[@"status"];
+//        [self.tableView reloadData];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"error = %@",error);
+    }];
+   
 }
 
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
