@@ -24,7 +24,8 @@
     
     self.window.backgroundColor = [UIColor whiteColor];
     
-    MZ_NavC *navC = [[MZ_NavC alloc]init];
+    MZ_Login_VC *vc = [[MZ_Login_VC alloc]init];
+    UINavigationController *navC = [[UINavigationController alloc]initWithRootViewController:vc];
     
     self.window.rootViewController = navC;
     

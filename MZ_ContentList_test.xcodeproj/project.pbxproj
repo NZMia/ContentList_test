@@ -34,6 +34,7 @@
 		823D017B1B0C48AE001F8F0D /* MZ_Login_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZ_Login_VC.h; sourceTree = "<group>"; };
 		823D017C1B0C48AE001F8F0D /* MZ_Login_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZ_Login_VC.m; sourceTree = "<group>"; };
 		823D017D1B0C48AE001F8F0D /* MZ_Login_VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MZ_Login_VC.xib; sourceTree = "<group>"; };
+		823D01801B0C82F5001F8F0D /* Data.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Data.h; sourceTree = "<group>"; };
 		82ED04151B0C1EAC00FC5D1C /* MZ_Detail_TVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZ_Detail_TVC.h; sourceTree = "<group>"; };
 		82ED04161B0C1EAC00FC5D1C /* MZ_Detail_TVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZ_Detail_TVC.m; sourceTree = "<group>"; };
 		82F928AB1B0BF9B200062EA8 /* MZ_ContentList_test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MZ_ContentList_test.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,6 +154,7 @@
 			children = (
 				82F928F41B0C16C200062EA8 /* MZ_Contact_NC.h */,
 				82F928F51B0C16C200062EA8 /* MZ_Contact_NC.m */,
+				823D01801B0C82F5001F8F0D /* Data.h */,
 			);
 			path = Controller;
 			sourceTree = "<group>";

@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.navigationItem setTitle:@"12323"];
+    [self.navigationItem setTitle:@"Contacts"];
 }
 
 - (void)didReceiveMemoryWarning {
