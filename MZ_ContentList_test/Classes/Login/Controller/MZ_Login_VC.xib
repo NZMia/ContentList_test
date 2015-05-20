@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="13F1066" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MZ_Login_VC">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="UkB-eo-xp3">
+                    <rect key="frame" x="210" y="150" width="180" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="180" id="FpI-b4-brP"/>
+                        <constraint firstAttribute="height" constant="30" id="aHm-fD-smd"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Passward" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Y6F-FY-MKw">
+                    <rect key="frame" x="210" y="190" width="180" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="Ad2-pl-M3R"/>
+                        <constraint firstAttribute="width" constant="180" id="B0g-i9-iCD"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZBO-fU-SSl">
+                    <rect key="frame" x="275" y="240" width="50" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="dbv-KS-rWN"/>
+                        <constraint firstAttribute="height" constant="30" id="hFe-DN-Z8X"/>
+                    </constraints>
+                    <state key="normal" title="Login">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="Login:" destination="-1" eventType="touchUpInside" id="g6B-jQ-Hz3"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sVM-UE-mwP">
+                    <rect key="frame" x="275" y="278" width="50" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="6qc-m5-INI"/>
+                        <constraint firstAttribute="width" constant="50" id="jL7-gH-9hi"/>
+                    </constraints>
+                    <state key="normal" title="Cancel">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="ZBO-fU-SSl" firstAttribute="top" secondItem="Y6F-FY-MKw" secondAttribute="bottom" constant="20" id="98g-rO-Orh"/>
+                <constraint firstAttribute="centerX" secondItem="UkB-eo-xp3" secondAttribute="centerX" id="CIq-hc-zf4"/>
+                <constraint firstItem="UkB-eo-xp3" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="150" id="Dvl-tr-0kQ"/>
+                <constraint firstAttribute="centerX" secondItem="sVM-UE-mwP" secondAttribute="centerX" id="H03-vQ-BFH"/>
+                <constraint firstAttribute="centerX" secondItem="Y6F-FY-MKw" secondAttribute="centerX" id="Kdd-Z6-oBb"/>
+                <constraint firstItem="sVM-UE-mwP" firstAttribute="top" secondItem="ZBO-fU-SSl" secondAttribute="bottom" constant="8" id="N0M-BK-XnS"/>
+                <constraint firstAttribute="centerX" secondItem="ZBO-fU-SSl" secondAttribute="centerX" id="bdY-aK-y5H"/>
+                <constraint firstItem="Y6F-FY-MKw" firstAttribute="top" secondItem="UkB-eo-xp3" secondAttribute="bottom" constant="10" id="kTT-BG-Sch"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

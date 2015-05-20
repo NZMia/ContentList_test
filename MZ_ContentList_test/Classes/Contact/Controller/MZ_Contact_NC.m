@@ -1,22 +1,23 @@
 //
-//  MZ_Login_NC.m
+//  MZ_Contact_NC.m
 //  MZ_ContentList_test
 //
 //  Created by Mia.Zhang on 20/05/15.
 //  Copyright (c) 2015 Mia.Zhang. All rights reserved.
 //
 
-#import "MZ_Login_NC.h"
+#import "MZ_Contact_NC.h"
 
-@interface MZ_Login_NC ()
+@interface MZ_Contact_NC ()
 
 @end
 
-@implementation MZ_Login_NC
+@implementation MZ_Contact_NC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    [self.navigationItem setTitle:@"12323"];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -7,13 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		823D017E1B0C48AE001F8F0D /* MZ_Login_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 823D017C1B0C48AE001F8F0D /* MZ_Login_VC.m */; };
+		823D017F1B0C48AE001F8F0D /* MZ_Login_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 823D017D1B0C48AE001F8F0D /* MZ_Login_VC.xib */; };
+		82ED04171B0C1EAC00FC5D1C /* MZ_Detail_TVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 82ED04161B0C1EAC00FC5D1C /* MZ_Detail_TVC.m */; };
 		82F928B71B0BF9B200062EA8 /* MZ_ContentList_test.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 82F928B51B0BF9B200062EA8 /* MZ_ContentList_test.xcdatamodeld */; };
 		82F928BF1B0BF9B200062EA8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82F928BE1B0BF9B200062EA8 /* Images.xcassets */; };
 		82F928C21B0BF9B200062EA8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82F928C01B0BF9B200062EA8 /* LaunchScreen.xib */; };
 		82F928CE1B0BF9B200062EA8 /* MZ_ContentList_testTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F928CD1B0BF9B200062EA8 /* MZ_ContentList_testTests.m */; };
 		82F928EC1B0BFBF400062EA8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F928EA1B0BFBF400062EA8 /* AppDelegate.m */; };
 		82F928ED1B0BFBF400062EA8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F928EB1B0BFBF400062EA8 /* main.m */; };
-		82F928F01B0BFDA400062EA8 /* MZ_Login_NC.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F928EF1B0BFDA400062EA8 /* MZ_Login_NC.m */; };
+		82F928F31B0BFF1000062EA8 /* MZ_NavC.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F928F21B0BFF1000062EA8 /* MZ_NavC.m */; };
+		82F928F61B0C16C200062EA8 /* MZ_Contact_NC.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F928F51B0C16C200062EA8 /* MZ_Contact_NC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +31,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		823D017B1B0C48AE001F8F0D /* MZ_Login_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZ_Login_VC.h; sourceTree = "<group>"; };
+		823D017C1B0C48AE001F8F0D /* MZ_Login_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZ_Login_VC.m; sourceTree = "<group>"; };
+		823D017D1B0C48AE001F8F0D /* MZ_Login_VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MZ_Login_VC.xib; sourceTree = "<group>"; };
+		82ED04151B0C1EAC00FC5D1C /* MZ_Detail_TVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZ_Detail_TVC.h; sourceTree = "<group>"; };
+		82ED04161B0C1EAC00FC5D1C /* MZ_Detail_TVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZ_Detail_TVC.m; sourceTree = "<group>"; };
 		82F928AB1B0BF9B200062EA8 /* MZ_ContentList_test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MZ_ContentList_test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82F928AF1B0BF9B200062EA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		82F928B61B0BF9B200062EA8 /* MZ_ContentList_test.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MZ_ContentList_test.xcdatamodel; sourceTree = "<group>"; };
@@ -38,8 +47,10 @@
 		82F928E91B0BFBF400062EA8 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		82F928EA1B0BFBF400062EA8 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		82F928EB1B0BFBF400062EA8 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		82F928EE1B0BFDA400062EA8 /* MZ_Login_NC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZ_Login_NC.h; sourceTree = "<group>"; };
-		82F928EF1B0BFDA400062EA8 /* MZ_Login_NC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZ_Login_NC.m; sourceTree = "<group>"; };
+		82F928F11B0BFF1000062EA8 /* MZ_NavC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZ_NavC.h; sourceTree = "<group>"; };
+		82F928F21B0BFF1000062EA8 /* MZ_NavC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZ_NavC.m; sourceTree = "<group>"; };
+		82F928F41B0C16C200062EA8 /* MZ_Contact_NC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZ_Contact_NC.h; sourceTree = "<group>"; };
+		82F928F51B0C16C200062EA8 /* MZ_Contact_NC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZ_Contact_NC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +151,8 @@
 		82F928D91B0BFBF400062EA8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				82F928F41B0C16C200062EA8 /* MZ_Contact_NC.h */,
+				82F928F51B0C16C200062EA8 /* MZ_Contact_NC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -171,6 +184,8 @@
 		82F928DD1B0BFBF400062EA8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				82ED04151B0C1EAC00FC5D1C /* MZ_Detail_TVC.h */,
+				82ED04161B0C1EAC00FC5D1C /* MZ_Detail_TVC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -202,8 +217,9 @@
 		82F928E11B0BFBF400062EA8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				82F928EE1B0BFDA400062EA8 /* MZ_Login_NC.h */,
-				82F928EF1B0BFDA400062EA8 /* MZ_Login_NC.m */,
+				823D017B1B0C48AE001F8F0D /* MZ_Login_VC.h */,
+				823D017C1B0C48AE001F8F0D /* MZ_Login_VC.m */,
+				823D017D1B0C48AE001F8F0D /* MZ_Login_VC.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -235,6 +251,8 @@
 		82F928E51B0BFBF400062EA8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				82F928F11B0BFF1000062EA8 /* MZ_NavC.h */,
+				82F928F21B0BFF1000062EA8 /* MZ_NavC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -345,6 +363,7 @@
 			files = (
 				82F928C21B0BF9B200062EA8 /* LaunchScreen.xib in Resources */,
 				82F928BF1B0BF9B200062EA8 /* Images.xcassets in Resources */,
+				823D017F1B0C48AE001F8F0D /* MZ_Login_VC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,9 +382,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				82F928EC1B0BFBF400062EA8 /* AppDelegate.m in Sources */,
+				82ED04171B0C1EAC00FC5D1C /* MZ_Detail_TVC.m in Sources */,
 				82F928ED1B0BFBF400062EA8 /* main.m in Sources */,
+				82F928F61B0C16C200062EA8 /* MZ_Contact_NC.m in Sources */,
 				82F928B71B0BF9B200062EA8 /* MZ_ContentList_test.xcdatamodeld in Sources */,
-				82F928F01B0BFDA400062EA8 /* MZ_Login_NC.m in Sources */,
+				82F928F31B0BFF1000062EA8 /* MZ_NavC.m in Sources */,
+				823D017E1B0C48AE001F8F0D /* MZ_Login_VC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -550,6 +572,7 @@
 				82F928D31B0BF9B200062EA8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		82F928D41B0BF9B200062EA8 /* Build configuration list for PBXNativeTarget "MZ_ContentList_testTests" */ = {
 			isa = XCConfigurationList;
@@ -558,6 +581,7 @@
 				82F928D61B0BF9B200062EA8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

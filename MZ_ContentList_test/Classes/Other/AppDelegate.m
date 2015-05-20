@@ -7,7 +7,9 @@
 //
 
 #import "AppDelegate.h"
-#import "MZ_Login_NC.h"
+#import "MZ_NavC.h"
+#import "MZ_Login_VC.h"
+
 
 @interface AppDelegate ()
 
@@ -20,9 +22,9 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
-    self.window.backgroundColor = [UIColor yellowColor];
+    self.window.backgroundColor = [UIColor whiteColor];
     
-    MZ_Login_NC *navC = [[MZ_Login_NC alloc]init];
+    MZ_NavC *navC = [[MZ_NavC alloc]init];
     
     self.window.rootViewController = navC;
     
