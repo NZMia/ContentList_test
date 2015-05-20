@@ -7,17 +7,57 @@
 //
 
 #import "MZ_Contact_NC.h"
+#import "AFNetworking.h"
 
 @interface MZ_Contact_NC ()
 
+@property (nonatomic, strong) NSMutableArray *status;
 @end
 
 @implementation MZ_Contact_NC
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self setNav];
+    [self loadStatus];
+}
+
+- (void)setNav
+{
+    self.navigationItem.leftBarButtonItem = nil;
+    self.navigationItem.rightBarButtonItem = nil;
     [self.navigationItem setTitle:@"Contacts"];
+}
+
+- (void)loadStatus
+{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+
+    NSMutableDictionary *parameter = [NSMutableDictionary dictionary];
+    
+}
+
+- (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return  self.status.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *reuseCell = @"ID";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseCell];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:reuseCell];
+    }
+    
+    NSDictionary *statusDict = self.status[indexPath.row];
+    NSDictionary *idDict = statusDict[@"id"];
+    
+    cell.textLabel.text = idDict[@"name"];
+    cell.detailTextLabel.text = idDict[@"email"];
+    return  cell;
 }
 
 - (void)didReceiveMemoryWarning {
