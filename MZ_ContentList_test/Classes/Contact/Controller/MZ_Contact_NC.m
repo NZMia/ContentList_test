@@ -11,6 +11,7 @@
 #import "MZ_Status.h"
 #import "MJExtension.h"
 #import "MZ_Detail_TVC.h"
+#import "UIView+Frame.h"
 
 @interface MZ_Contact_NC ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -80,6 +81,13 @@
     MZ_Status *status =self.status[indexPath.row];
     cell.textLabel.text = status.name;
     cell.detailTextLabel.text = status.email;
+    
+// To show Details
+    UILabel *label = [[UILabel alloc]init];
+    label.text = @"Details";
+    label.font = [UIFont systemFontOfSize:10];
+    label.size = [label.text sizeWithFont:label.font];
+    cell.accessoryView = label;
     return  cell;
 }
 
