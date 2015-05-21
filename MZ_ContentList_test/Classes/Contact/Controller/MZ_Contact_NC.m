@@ -18,6 +18,13 @@
 
 @implementation MZ_Contact_NC
 
+- (NSMutableArray *)status
+{
+    if (_status == nil) {
+        _status = [NSMutableArray array];
+    }
+    return _status;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -42,9 +49,9 @@
     NSString *url = @"http://jsonplaceholder.typicode.com/users";
     [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
-        NSArray *dicArray = responseObject[@"Status"];
+       // NSArray *dicArray = responseObject[@"Status"];
         NSMutableArray *arraySaving = [NSMutableArray array];
-        for (NSDictionary *dict in dicArray) {
+        for (NSDictionary *dict in responseObject) {
             MZ_Status *status = [MZ_Status objectWithKeyValues:dict];
             [arraySaving addObject:status];
         }
