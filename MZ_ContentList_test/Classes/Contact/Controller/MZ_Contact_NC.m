@@ -88,6 +88,7 @@
     label.font = [UIFont systemFontOfSize:10];
     label.size = [label.text sizeWithFont:label.font];
     cell.accessoryView = label;
+    //cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     return  cell;
 }
 

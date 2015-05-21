@@ -8,8 +8,12 @@
 
 #import "MZ_Login_VC.h"
 #import "MZ_Contact_NC.h"
-
+#import "MBProgressHUD.h"
+#import "MBProgressHUD+MJ.h"
 @interface MZ_Login_VC ()
+@property (weak, nonatomic) IBOutlet UITextField *Account;
+
+@property (weak, nonatomic) IBOutlet UITextField *Passward;
 
 - (IBAction)Login:(UIButton *)sender;
 
@@ -34,7 +38,19 @@
 
 - (IBAction)Login:(UIButton *)sender {
     
-    MZ_Contact_NC *contactV = [[MZ_Contact_NC alloc]init];
-    [self.navigationController pushViewController:contactV animated:YES];
+    [MBProgressHUD showMessage:@"Loging"];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [MBProgressHUD hideHUD];
+        
+        if ([_Account.text isEqualToString:@"mia"] && [_Passward.text isEqualToString:@"mia"]) {
+            
+            MZ_Contact_NC *contactV = [[MZ_Contact_NC alloc]init];
+            [self.navigationController pushViewController:contactV animated:YES];
+        }else{
+            [MBProgressHUD showError:@"Wrong..."];
+        }
+    });
+    
 }
 @end
