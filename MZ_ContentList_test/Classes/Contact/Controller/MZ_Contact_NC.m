@@ -8,6 +8,8 @@
 
 #import "MZ_Contact_NC.h"
 #import "AFNetworking.h"
+#import "MZ_Status.h"
+#import "MJExtension.h"
 
 @interface MZ_Contact_NC ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -40,9 +42,14 @@
     NSString *url = @"http://jsonplaceholder.typicode.com/users";
     [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
-        NSLog(@"successful = %@",responseObject);
-//        self.status = responseObject[@"status"];
-//        [self.tableView reloadData];
+        NSArray *dicArray = responseObject[@"Status"];
+        NSMutableArray *arraySaving = [NSMutableArray array];
+        for (NSDictionary *dict in dicArray) {
+            MZ_Status *status = [MZ_Status objectWithKeyValues:dict];
+            [arraySaving addObject:status];
+        }
+        self.status = arraySaving;
+        [self.tableView reloadData];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"error = %@",error);
     }];
@@ -62,11 +69,9 @@
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:reuseCell];
     }
     
-    NSDictionary *statusDict = self.status[indexPath.row];
-    NSDictionary *idDict = statusDict[@"id"];
-    
-    cell.textLabel.text = idDict[@"name"];
-    cell.detailTextLabel.text = idDict[@"email"];
+    MZ_Status *status =self.status[indexPath.row];
+    cell.textLabel.text = status.name;
+    cell.detailTextLabel.text = status.email;
     return  cell;
 }
 

@@ -12,7 +12,7 @@
 
 @interface MZ_Status : NSObject
 
-@property (nonatomic, assign) int ID;
+@property (nonatomic, assign) int id;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *username;
 @property (nonatomic, copy) NSString *email;
