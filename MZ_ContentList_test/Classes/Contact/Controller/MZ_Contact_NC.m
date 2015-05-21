@@ -10,6 +10,7 @@
 #import "AFNetworking.h"
 #import "MZ_Status.h"
 #import "MJExtension.h"
+#import "MZ_Detail_TVC.h"
 
 @interface MZ_Contact_NC ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -38,8 +39,8 @@
 
 - (void)setNav
 {
-    self.navigationItem.leftBarButtonItem = nil;
-    self.navigationItem.rightBarButtonItem = nil;
+    UIBarButtonItem *left = [[UIBarButtonItem alloc]initWithTitle:nil style:nil target:nil action:nil];
+    self.navigationItem.leftBarButtonItem = left;
     [self.navigationItem setTitle:@"Contacts"];
 }
 
@@ -80,6 +81,12 @@
     cell.textLabel.text = status.name;
     cell.detailTextLabel.text = status.email;
     return  cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    MZ_Detail_TVC *detailInfo = [[MZ_Detail_TVC alloc]init];
+    [self.navigationController pushViewController:detailInfo animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

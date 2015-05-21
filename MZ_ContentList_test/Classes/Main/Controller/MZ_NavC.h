@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MZ_NavC : UINavigationController
+@interface MZ_NavC : UIViewController
 
 @end
