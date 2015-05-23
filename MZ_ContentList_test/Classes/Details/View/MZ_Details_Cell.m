@@ -52,7 +52,7 @@
     // 1.USERNAME---UILabel
     UILabel *username = [[UILabel alloc]init];;
     [self.contentView addSubview:username];
-    
+
     // 2.PHONE --- UILable
     UILabel *phone = [[UILabel alloc]init];;
     [self.contentView addSubview:phone];
@@ -99,7 +99,7 @@
     
     /**ADDRESS */
     //Joining the 'NSString' of address for a complete address
-    NSString *completeAddress = [NSString stringWithFormat:@"%@,%@,%@,%@",address.suite,address.street,address.city,address.zipcode];;
+    NSString *completeAddress = [NSString stringWithFormat:@"%@,%@,%@,%@",address.suite,address.street,address.city,address.zipcode];
     self.addressLabel.text = completeAddress;
     
     /**WESITE */
@@ -123,7 +123,9 @@
     self.phoneLabel.frame = self.statusFrame.phoneLabelF;
     
     /**ADDRESS */
+    //[self.addressLabel setNumberOfLines:0];
     self.addressLabel.frame = self.statusFrame.addressLabelF;
+    
     /**WESITE */
     self.webisteLabel.frame = self.statusFrame.webisteLabelF;
     

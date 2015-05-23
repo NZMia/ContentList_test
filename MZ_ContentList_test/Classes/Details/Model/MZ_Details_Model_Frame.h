@@ -31,6 +31,6 @@
 /**
  *   cell's height
  */
-@property (nonatomic, assign,readonly) CGRect *cellHeight;
+@property (nonatomic, assign,readonly) CGFloat cellHeight;
 
 @end
