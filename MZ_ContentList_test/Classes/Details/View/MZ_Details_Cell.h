@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@class MZ_Details_TableItem;
+@class MZ_Details_Model_Frame;
 @interface MZ_Details_Cell : UITableViewCell
 
 + (instancetype)cellWithTableView:(UITableView*)tableView;
 
-@property (nonatomic,strong) MZ_Details_TableItem *item;
+@property (nonatomic,strong) MZ_Details_Model_Frame *statusFrame;
 @end

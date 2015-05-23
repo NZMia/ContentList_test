@@ -13,7 +13,7 @@
 #import "MZ_Detail_TVC.h"
 #import "UIView+Frame.h"
 
-@interface MZ_Contact_NC ()<UITableViewDataSource, UITableViewDelegate>
+@interface MZ_Contact_NC ()<UITableViewDataSource, UITableViewDelegate, MZ_Detail_TVC_Delegate>
 
 @property (nonatomic, strong) NSMutableArray *status;
 @end
@@ -95,7 +95,13 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     MZ_Detail_TVC *detailInfo = [[MZ_Detail_TVC alloc]init];
+    detailInfo.delegare = self;
     [self.navigationController pushViewController:detailInfo animated:YES];
+}
+
+- (void)mz_detail_tvc:(MZ_Detail_TVC *)detailInfo didTouchUpInsideTableCell:(MZ_Status *)status
+{
+    [self.status addObject:status];
 }
 
 - (void)didReceiveMemoryWarning {
