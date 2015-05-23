@@ -50,23 +50,28 @@
 - (void)setUpDetailView
 {
     // 1.USERNAME---UILabel
-    UILabel *username = [[UILabel alloc]init];;
+    UILabel *username = [[UILabel alloc]init];
+    self.usernameLabel = username;
     [self.contentView addSubview:username];
 
     // 2.PHONE --- UILable
-    UILabel *phone = [[UILabel alloc]init];;
+    UILabel *phone = [[UILabel alloc]init];
+    self.phoneLabel = phone;
     [self.contentView addSubview:phone];
     
     // 3. ADDRESS --- UILable
-    UILabel *address = [[UILabel alloc]init];;
+    UILabel *address = [[UILabel alloc]init];
+    self.addressLabel = address;
     [self.contentView addSubview:address];
     
     // 4. WEBSITE --- UILable
-    UILabel *webiste = [[UILabel alloc]init];;
+    UILabel *webiste = [[UILabel alloc]init];
+    self.webisteLabel = webiste;
     [self.contentView addSubview:webiste];
     
     // 5. COMPANY --- UILable
     UILabel *company = [[UILabel alloc]init];
+    self.companyLabel = company;
     [self.contentView addSubview:company];
 }
 

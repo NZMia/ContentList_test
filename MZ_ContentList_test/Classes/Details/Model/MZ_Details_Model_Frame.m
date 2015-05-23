@@ -55,7 +55,7 @@
     CGFloat companyX = MZCellPadding;
     CGFloat companyY = CGRectGetMaxY(_webisteLabelF) +5;
     CGFloat companyW = MZScreenWidth;
-    CGSize companyContentMaxSize = CGSizeMake(addressW - MZCellPadding - MZCellPadding, MAXFLOAT);
+    CGSize companyContentMaxSize = CGSizeMake(companyW - MZCellPadding - MZCellPadding, MAXFLOAT);
     NSString *completeCompany = [NSString stringWithFormat:@"%@,%@,%@",company.name,company.catachPhrase,company.bs];
     CGSize companySize = [completeCompany sizeWithFont:[UIFont systemFontOfSize:12] constrainedToSize:companyContentMaxSize];
     _companyLabelF =(CGRect){{companyX , companyY }, companySize};

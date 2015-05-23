@@ -13,5 +13,5 @@
 @class MZ_Detail_TVC, MZ_Status;
 @interface MZ_Detail_TVC : UITableViewController
 
-@property (nonatomic, strong) MZ_Status *status;
+@property (nonatomic, strong) NSMutableArray *status;
 @end

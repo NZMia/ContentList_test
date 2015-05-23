@@ -17,6 +17,7 @@
  *  saving all the information data frame model(it is models)
  */
 @property (nonatomic, strong) NSMutableArray *statusFrame;
+
 @end
 
 @implementation MZ_Detail_TVC
@@ -61,11 +62,29 @@
     /** 1. Creating a new cell*/
     MZ_Details_Cell *cell = [MZ_Details_Cell cellWithTableView:tableView];
     /** 2. Setting a data of each cell*/
-    NSLog(@"%@",self.statusFrame);
+    MZ_Details_Model_Frame *data = self.statusFrame[indexPath.row];
+    cell.statusFrame = data;
+
     //cell.statusFrame = self.statusFrame[indexPath.row];
     //NSLog(@"%@",self.statusFrame);
     /** 3. return cell*/
     return cell;
+}
+
+- (void)setStatus:(NSMutableArray *)status
+{
+    _status = status;
+    
+    NSMutableArray * statusDetail = [NSMutableArray array];
+    for (MZ_Status *sta in status) {
+        
+        MZ_Details_Model_Frame *data = [[MZ_Details_Model_Frame alloc]init];
+        data.status = sta;
+        [statusDetail addObject:data];
+    }
+    
+    [self.statusFrame addObjectsFromArray:statusDetail];
+    [self.tableView reloadData];
 }
 
 

@@ -96,6 +96,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     MZ_Detail_TVC *detailInfo = [[MZ_Detail_TVC alloc]init];
+    detailInfo.status = self.status;
     [self.navigationController pushViewController:detailInfo animated:YES];
 }
 
