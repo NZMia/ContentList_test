@@ -10,57 +10,39 @@
 #import "MZ_Status.h"
 #import "MZ_Address.h"
 #import "MZ_Company.h"
-
-#define  MZCellPadding 10
+#import "MZ_Details_Model.h"
+#define  MZCellPadding 15
 #define MZScreenWidth [UIScreen mainScreen].bounds.size.width
 @implementation MZ_Details_Model_Frame
 
-- (void)setStatus:(MZ_Status *)status
+- (void)setDetailInfo:(MZ_Details_Model *)detailInfo
 {
-    _status = status;
-    MZ_Address *address = _status.address;
-    MZ_Company *company = _status.company;
-//1. USERNAME
-    CGFloat usernameX = MZCellPadding;
-    CGFloat usernameY = MZCellPadding;
-    CGFloat usernameW = MZScreenWidth;
-    CGFloat usernameH = 44;
-    _usernameLabelF = CGRectMake(usernameX, usernameY, usernameW, usernameH);
+    _detailInfo =detailInfo;
     
-//2. PHONE
-    CGFloat phoneX = MZCellPadding;
-    CGFloat phoneY = CGRectGetMaxY(_usernameLabelF) + 5;
-    CGFloat phoneW = MZScreenWidth;
-    CGFloat phoneH = 44;
-    _phoneLabelF = CGRectMake(phoneX, phoneY, phoneW, phoneH);
+    CGFloat MZcellWidth = MZScreenWidth - MZCellPadding * 2;
     
-//3. ADDRESS
-    CGFloat addressX = MZCellPadding;
-    CGFloat addressY =CGRectGetMaxY(_phoneLabelF) +5;
-    CGFloat addressW = MZScreenWidth;
-    //constraint
-    CGSize addressContentMaxSize = CGSizeMake(addressW - MZCellPadding - MZCellPadding, MAXFLOAT);
-    NSString *completeAddress = [NSString stringWithFormat:@"%@,%@,%@,%@",address.suite,address.street,address.city,address.zipcode];
-    CGSize addressSize = [completeAddress sizeWithFont:[UIFont systemFontOfSize:12] constrainedToSize:addressContentMaxSize];
-    _addressLabelF =  (CGRect){{addressX, addressY}, addressSize};
+    //1. Content
+    CGFloat contentX = MZCellPadding;
+    CGFloat contentY = MZCellPadding;
+    CGFloat contentW = MZcellWidth;
     
-//4. WEBSITE
-    CGFloat webisteX = MZCellPadding;
-    CGFloat webisteY = CGRectGetMaxY(_addressLabelF) +5;
-    CGFloat webisteW = MZScreenWidth;
-    CGFloat webisteH = 44;
-    _webisteLabelF = CGRectMake(webisteX, webisteY, webisteW, webisteH);
+    NSDictionary *attribute = @{NSFontAttributeName: [UIFont systemFontOfSize:17]};
+    CGSize contentSize = [_detailInfo.content boundingRectWithSize:CGSizeMake(contentW, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin |
+                          NSStringDrawingTruncatesLastVisibleLine  attributes:attribute context:nil].size;
     
-//5. COMPANY
-    CGFloat companyX = MZCellPadding;
-    CGFloat companyY = CGRectGetMaxY(_webisteLabelF) +5;
-    CGFloat companyW = MZScreenWidth;
-    CGSize companyContentMaxSize = CGSizeMake(companyW - MZCellPadding - MZCellPadding, MAXFLOAT);
-    NSString *completeCompany = [NSString stringWithFormat:@"%@,%@,%@",company.name,company.catachPhrase,company.bs];
-    CGSize companySize = [completeCompany sizeWithFont:[UIFont systemFontOfSize:12] constrainedToSize:companyContentMaxSize];
-    _companyLabelF =(CGRect){{companyX , companyY }, companySize};
+    _contentLabelF =  (CGRect){{contentX, contentY}, contentSize};
+    
+    
+    //2. Title
+    CGFloat titleX = MZCellPadding;
+    CGFloat titleY = CGRectGetMaxY(_contentLabelF) +5;
+    CGFloat titleW = MZcellWidth;
+    CGFloat titleH = 44;
+    _titleLabelF = CGRectMake(titleX, titleY, titleW, titleH);
+    
+    
+    _cellHeight = CGRectGetMaxY(_titleLabelF);
 
-//6. CELL
-    _cellHeight = CGRectGetMaxY(_companyLabelF);
+
 }
 @end

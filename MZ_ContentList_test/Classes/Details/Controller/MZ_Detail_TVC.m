@@ -10,29 +10,24 @@
 #import "UIView+Frame.h"
 #import "MZ_Details_Cell.h"
 #import "MZ_Details_Model_Frame.h"
+#import "MZ_Details_Model.h"
 
+#import "MZ_Status.h"
 @interface MZ_Detail_TVC ()
 
 /**
  *  saving all the information data frame model(it is models)
  */
-@property (nonatomic, strong) NSMutableArray *statusFrame;
 
+@property (nonatomic, strong) NSMutableArray *infoFrame;
 @end
 
 @implementation MZ_Detail_TVC
 
-- (NSMutableArray *)statusFrame
-{
-    if (!_statusFrame) {
-        _statusFrame = [NSMutableArray array];
-    }
-    return _statusFrame;
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.title = self.userInfo.name;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -44,7 +39,7 @@
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+    return self.infoFrame.count;
 }
 
 
@@ -62,8 +57,7 @@
     /** 1. Creating a new cell*/
     MZ_Details_Cell *cell = [MZ_Details_Cell cellWithTableView:tableView];
     /** 2. Setting a data of each cell*/
-    MZ_Details_Model_Frame *data = self.statusFrame[indexPath.row];
-    cell.statusFrame = data;
+    cell.statusFrame = self.infoFrame[indexPath.row];
 
     //cell.statusFrame = self.statusFrame[indexPath.row];
     //NSLog(@"%@",self.statusFrame);
@@ -71,21 +65,42 @@
     return cell;
 }
 
-- (void)setStatus:(NSMutableArray *)status
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    _status = status;
-    
-    NSMutableArray * statusDetail = [NSMutableArray array];
-    for (MZ_Status *sta in status) {
-        
-        MZ_Details_Model_Frame *data = [[MZ_Details_Model_Frame alloc]init];
-        data.status = sta;
-        [statusDetail addObject:data];
-    }
-    
-    [self.statusFrame addObjectsFromArray:statusDetail];
-    [self.tableView reloadData];
+    MZ_Details_Model_Frame *dmf = self.infoFrame[indexPath.row];
+    return  dmf.cellHeight;
 }
 
+- (void)setUserInfo:(MZ_Status *)userInfo{
+    _userInfo = userInfo;
+    [self detailModelWithTitle:@"USERNAME" andContent:userInfo.name];
+    [self detailModelWithTitle:@"PHONE" andContent:userInfo.phone];
+    [self detailModelWithTitle:@"ADDRESS" andContent:[NSString stringWithFormat:@"%@,%@,%@,%@",userInfo.address.suite, userInfo.address.street, userInfo.address.city, userInfo.address.zipcode]];
+    [self detailModelWithTitle:@"WEBSITE" andContent:userInfo.website];
+    [self detailModelWithTitle:@"COMPANY" andContent:[NSString stringWithFormat:@"%@,%@,%@",userInfo.company.name, userInfo.company.catachPhrase, userInfo.company.bs]];
+    
+    
+}
+- (void)detailModelWithTitle:(NSString *)title andContent:(NSString *)content{
+    MZ_Details_Model *model = [[MZ_Details_Model alloc] init];
+    model.title = title;
+    model.content = content;
+    
+    MZ_Details_Model_Frame *dmf = [[MZ_Details_Model_Frame alloc] init];
+    dmf.detailInfo = model;
+    
+    [self.infoFrame addObject:dmf];
+    
+}
+
+
+- (NSMutableArray *)infoFrame
+{
+    if (!_infoFrame) {
+        _infoFrame = [NSMutableArray array];
+    }
+    return _infoFrame;
+
+}
 
 @end

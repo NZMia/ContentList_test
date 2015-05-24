@@ -8,26 +8,18 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-@class MZ_Status;
+@class MZ_Details_Model;
 @interface MZ_Details_Model_Frame : NSObject
 
 /**
  *  Data source model --- status model
  */
-@property (nonatomic, strong) MZ_Status *status;
+@property (nonatomic, strong) MZ_Details_Model *detailInfo;
 
 // Definition the property to save the all objects' frame
 
-/**username*/
-@property (nonatomic, assign,readonly) CGRect usernameLabelF;
-/**phone*/
-@property (nonatomic, assign,readonly) CGRect phoneLabelF;
-/**address*/
-@property (nonatomic, assign,readonly) CGRect addressLabelF;
-/**website*/
-@property (nonatomic, assign,readonly) CGRect webisteLabelF;
-/**company*/
-@property (nonatomic, assign,readonly) CGRect companyLabelF;
+@property (nonatomic, assign,readonly) CGRect titleLabelF;
+@property (nonatomic, assign,readonly) CGRect contentLabelF;
 /**
  *   cell's height
  */

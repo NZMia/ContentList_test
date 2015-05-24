@@ -37,12 +37,12 @@
     
     [self setNav];
     [self loadStatus];
+    self.navigationItem.hidesBackButton = YES;
 }
 
 - (void)setNav
 {
-    UIBarButtonItem *left = [[UIBarButtonItem alloc]initWithTitle:nil style:nil target:nil action:nil];
-    self.navigationItem.leftBarButtonItem = left;
+    
     [self.navigationItem setTitle:@"Contacts"];
 }
 
@@ -96,8 +96,16 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     MZ_Detail_TVC *detailInfo = [[MZ_Detail_TVC alloc]init];
-    detailInfo.status = self.status;
+    MZ_Status *status = self.status[indexPath.row];
+    detailInfo.userInfo = status;
+    
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] init];
+    item.title = @"";
+    self.navigationItem.backBarButtonItem = item;
+    [self.navigationController.navigationBar setTintColor:[UIColor blackColor]];
+    
     [self.navigationController pushViewController:detailInfo animated:YES];
+   
 }
 
 - (void)didReceiveMemoryWarning {

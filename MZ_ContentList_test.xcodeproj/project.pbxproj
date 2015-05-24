@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		82286DB41B11C8740095DDEA /* MZ_Details_Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 82286DB31B11C8740095DDEA /* MZ_Details_Model.m */; };
 		823D017E1B0C48AE001F8F0D /* MZ_Login_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 823D017C1B0C48AE001F8F0D /* MZ_Login_VC.m */; };
 		823D017F1B0C48AE001F8F0D /* MZ_Login_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 823D017D1B0C48AE001F8F0D /* MZ_Login_VC.xib */; };
 		823D01BF1B0C8C26001F8F0D /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 823D01AD1B0C8C26001F8F0D /* AFHTTPRequestOperation.m */; };
@@ -60,6 +61,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		82286DB21B11C8740095DDEA /* MZ_Details_Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZ_Details_Model.h; sourceTree = "<group>"; };
+		82286DB31B11C8740095DDEA /* MZ_Details_Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZ_Details_Model.m; sourceTree = "<group>"; };
 		823D017B1B0C48AE001F8F0D /* MZ_Login_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZ_Login_VC.h; sourceTree = "<group>"; };
 		823D017C1B0C48AE001F8F0D /* MZ_Login_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZ_Login_VC.m; sourceTree = "<group>"; };
 		823D017D1B0C48AE001F8F0D /* MZ_Login_VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MZ_Login_VC.xib; sourceTree = "<group>"; };
@@ -387,6 +390,8 @@
 			children = (
 				8251F4061B0F386D00AB321D /* MZ_Details_Model_Frame.h */,
 				8251F4071B0F386D00AB321D /* MZ_Details_Model_Frame.m */,
+				82286DB21B11C8740095DDEA /* MZ_Details_Model.h */,
+				82286DB31B11C8740095DDEA /* MZ_Details_Model.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -612,6 +617,7 @@
 				823D01C21B0C8C26001F8F0D /* AFNetworkReachabilityManager.m in Sources */,
 				823D01F21B0D4BBB001F8F0D /* NSObject+MJKeyValue.m in Sources */,
 				823D01C01B0C8C26001F8F0D /* AFHTTPRequestOperationManager.m in Sources */,
+				82286DB41B11C8740095DDEA /* MZ_Details_Model.m in Sources */,
 				823D01EC1B0D4BBB001F8F0D /* MJIvar.m in Sources */,
 				823D01CD1B0D4743001F8F0D /* MZ_Address.m in Sources */,
 			);

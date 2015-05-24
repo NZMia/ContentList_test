@@ -7,18 +7,16 @@
 //
 
 #import "MZ_Details_Cell.h"
-#import "MZ_Status.h"
+
 #import "MZ_Details_Model_Frame.h"
-#import "MZ_Address.h"
-#import "MZ_Company.h"
+
 #import "UIView+Frame.h"
+#import "MZ_Details_Model.h"
 @interface MZ_Details_Cell()
 
-@property (nonatomic, weak) UILabel *usernameLabel;
-@property (nonatomic ,weak) UILabel *phoneLabel;
-@property (nonatomic ,weak) UILabel *addressLabel;
-@property (nonatomic ,weak) UILabel *webisteLabel;
-@property (nonatomic ,weak) UILabel *companyLabel;
+@property (nonatomic, weak) UILabel *title;
+@property (nonatomic ,weak) UILabel *content;
+
 @end
 @implementation MZ_Details_Cell
 
@@ -49,92 +47,62 @@
  */
 - (void)setUpDetailView
 {
-    // 1.USERNAME---UILabel
-    UILabel *username = [[UILabel alloc]init];
-    self.usernameLabel = username;
-    [self.contentView addSubview:username];
-
-    // 2.PHONE --- UILable
-    UILabel *phone = [[UILabel alloc]init];
-    self.phoneLabel = phone;
-    [self.contentView addSubview:phone];
+    //    [self layoutIfNeeded];
+    // 1.Title---UILabel
+    UILabel *title = [[UILabel alloc]init];
+    //title.backgroundColor = [UIColor orangeColor];
+    title.textColor = [UIColor lightGrayColor];
+    self.title = title;
+    [self addSubview:title];
     
-    // 3. ADDRESS --- UILable
-    UILabel *address = [[UILabel alloc]init];
-    self.addressLabel = address;
-    [self.contentView addSubview:address];
+    // 2.Content --- UILable
+    UILabel *content = [[UILabel alloc]init];
+    //content.backgroundColor = [UIColor lightGrayColor];
+    content.font = [UIFont systemFontOfSize:17];
     
-    // 4. WEBSITE --- UILable
-    UILabel *webiste = [[UILabel alloc]init];
-    self.webisteLabel = webiste;
-    [self.contentView addSubview:webiste];
+    content.numberOfLines = 0;
+    self.content = content;
+    [self addSubview:content];
     
-    // 5. COMPANY --- UILable
-    UILabel *company = [[UILabel alloc]init];
-    self.companyLabel = company;
-    [self.contentView addSubview:company];
+    
 }
 
 #pragma mark - Setting data
 
 - (void)setStatusFrame:(MZ_Details_Model_Frame *)statusFrame
 {
-    _statusFrame =statusFrame;
+    _statusFrame = statusFrame;
     //1. setting Data
     [self setUpData];
     //2. setting Frame
     [self setUpFrame];
+    [self layoutIfNeeded];
 }
 /**
  *  Setting Data
  */
 - (void)setUpData
 {
-//1. Take out Data model
-    MZ_Status *status = self.statusFrame.status;
-    MZ_Address *address = status.address;
-    MZ_Company *company = status.company;
-
-//2. Take out
+    //1. Take out Data model
+    MZ_Details_Model *status = self.statusFrame.detailInfo;
+    
+    
+    //2. Take out
     /**USERNAME */
-    self.usernameLabel.text = status.username;
+    self.title.text = status.title;
     
     /**PHONE */
-    self.phoneLabel.text = status.phone;
+    self.content.text = status.content;
     
-    /**ADDRESS */
-    //Joining the 'NSString' of address for a complete address
-    NSString *completeAddress = [NSString stringWithFormat:@"%@,%@,%@,%@",address.suite,address.street,address.city,address.zipcode];
-    self.addressLabel.text = completeAddress;
     
-    /**WESITE */
-    self.webisteLabel.text = status.website;
-    
-    /**COMPANY */
-    //Joint the 'NSString' of company for a complete company name
-    NSString *completeCompany = [NSString stringWithFormat:@"%@,%@,%@",company.name,company.catachPhrase,company.bs];
-    self.companyLabel.text = completeCompany;
     
 }
-/**
- *  setting Frame
- */
+
+
 - (void)setUpFrame
 {
-    /**USERNAME */
-    self.usernameLabel.frame = self.statusFrame.usernameLabelF;
+    self.title.frame = self.statusFrame.titleLabelF;
+    self.content.frame = self.statusFrame.contentLabelF;
     
-    /**PHONE */
-    self.phoneLabel.frame = self.statusFrame.phoneLabelF;
-    
-    /**ADDRESS */
-    //[self.addressLabel setNumberOfLines:0];
-    self.addressLabel.frame = self.statusFrame.addressLabelF;
-    
-    /**WESITE */
-    self.webisteLabel.frame = self.statusFrame.webisteLabelF;
-    
-    /**COMPANY */
-    self.companyLabel.frame = self.statusFrame.companyLabelF;
 }
 @end
